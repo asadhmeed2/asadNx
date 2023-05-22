@@ -2,9 +2,13 @@ import React from 'react'
 import { Card } from 'react-bootstrap'
 
 
-import { demoData } from '@asadnx/shared-ts'
-
 import styles from './InfoCard.module.scss'
+
+const demoData = {
+    name:'Asad Hmeed',
+    title:'Junior Frontend Developer'
+
+} 
 
 export const InfoCard = () => {
   return (
