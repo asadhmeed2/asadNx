@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@asadnx/shared-ts": ["packages/shared-ts/src/index.ts"]
+      "@asadnx/shared-ts": ["libs/shared-ts/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

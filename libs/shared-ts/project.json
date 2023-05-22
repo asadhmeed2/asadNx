@@ -1,31 +1,21 @@
 {
   "name": "shared-ts",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "packages/shared-ts/src",
+  "sourceRoot": "libs/shared-ts/src",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/packages/shared-ts",
-        "main": "packages/shared-ts/src/index.ts",
-        "tsConfig": "packages/shared-ts/tsconfig.lib.json",
-        "assets": ["packages/shared-ts/*.md"]
-      }
-    },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["packages/shared-ts/**/*.ts"]
+        "lintFilePatterns": ["libs/shared-ts/**/*.ts"]
       }
     },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "packages/shared-ts/jest.config.ts",
+        "jestConfig": "libs/shared-ts/jest.config.ts",
         "passWithNoTests": true
       },
       "configurations": {
