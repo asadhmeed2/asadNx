@@ -9,15 +9,17 @@ technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap"]
 
 export const ExpCard = () => {
   return (
-    <div className='text-white'>
+    <div  className='bg-white p-4'>
         <h2>Experience</h2>
         <div className='mt-1'>
        {demoData.map(item =>{
            return <div >
             <h3>{item.title}</h3>
             <span>{item.subTitle}</span>
+            <br />
             <span>{item.description}</span>
-            <span>{item.technolgies.join(', ')}</span>
+            <br />
+            <span>technolgies :{item.technolgies.join(', ')}</span>
         </div>
        })} 
        </div>

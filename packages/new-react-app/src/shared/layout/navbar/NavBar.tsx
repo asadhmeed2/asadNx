@@ -14,7 +14,7 @@ export const NavBar = () => {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title className='text-white' id={`offcanvasNavbarLabel-expand`}>
-                  Offcanvas
+                 Profile
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
