@@ -14,7 +14,7 @@ export const ExpCard = () => {
         <div className='mt-1'>
        {demoData.map(item =>{
            return <div >
-            <h3>{item.title}</h3>
+            <span>{item.title}</span>
             <span>{item.subTitle}</span>
             <br />
             <span>{item.description}</span>
