@@ -12,6 +12,8 @@ const demodata = [{id:'1', title:'Aba Hatuv  אבא חטוב', description:'', f
 
 export const ProjectsCardList = () => {
   return (
+    <>
+      <h2>projects that i take part of :</h2>
     <div className={cn('d-flex ps-1 justify-content-center',styles.list)}>
     {
       demodata.map((item)=>{
@@ -33,5 +35,6 @@ export const ProjectsCardList = () => {
       })
     }
     </div>
+    </>
   )
 }

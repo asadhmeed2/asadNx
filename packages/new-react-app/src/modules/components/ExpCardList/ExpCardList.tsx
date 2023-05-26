@@ -11,7 +11,7 @@ export const ExpCardList = () => {
   return (
     <div  className='bg-white p-4'>
         <h2>Experience</h2>
-        <div className='mt-1 d-flex'>
+        <div className='mt-1 d-flex '>
        {demoData.map(item =>{
            return <div >
             <div className="fs-4">     
