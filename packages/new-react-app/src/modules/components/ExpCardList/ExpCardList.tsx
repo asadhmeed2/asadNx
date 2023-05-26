@@ -7,11 +7,11 @@ technolgies: ["javascript", "react" , "HTML", "CSS", "MaterialUi" ,'flask']},
 description:'working in a R&D team as a Frontend Developer',
 technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap"]}]
 
-export const ExpCard = () => {
+export const ExpCardList = () => {
   return (
     <div  className='bg-white p-4'>
         <h2>Experience</h2>
-        <div className='mt-1'>
+        <div className='mt-1 d-flex'>
        {demoData.map(item =>{
            return <div >
             <div className="fs-4">     

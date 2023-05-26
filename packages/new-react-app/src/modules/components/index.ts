@@ -1,2 +1,3 @@
 export * from './InfoCard'
-export * from './ExpCard'
+export * from './ExpCardList'
+export * from './ProjectsCardList'
