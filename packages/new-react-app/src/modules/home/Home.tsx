@@ -12,8 +12,15 @@ export const Home = () => {
             </div>
             <InfoCard/>
 
+            <div className="">
+            <h2>Experience</h2>
+            </div>
             <div className="mt-2 px-4 ">
             <ExpCardList/>
+            </div>
+
+            <div className="">
+            <h2>projects that i take part of :</h2>
             </div>
 
             <div className="mt-2 px-4 ">

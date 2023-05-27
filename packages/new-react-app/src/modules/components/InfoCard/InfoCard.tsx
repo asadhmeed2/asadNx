@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card, Col, Container, Row } from 'react-bootstrap'
 
+import cn from 'classnames'
 
 import styles from './InfoCard.module.scss'
 
@@ -14,7 +15,7 @@ const demoData = {
 
 export const InfoCard = () => {
   return (
-    <Card className={styles.card}>
+    <Card className={cn(styles.card,'p-3')}>
         <Container className={styles.container}>
             <Row>
                 <Col sm="12" md="6" className={styles.name}>

@@ -9,11 +9,11 @@ technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap"]
 
 export const ExpCardList = () => {
   return (
+        
     <div  className='bg-white p-4'>
-        <h2>Experience</h2>
         <div className='mt-1 d-flex '>
        {demoData.map(item =>{
-           return <div >
+           return <div className='ms-1'>
             <div className="fs-4">     
                 <span>{item.title}</span>
             </div>
