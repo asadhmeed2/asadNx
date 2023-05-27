@@ -10,10 +10,10 @@ technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap"]
 export const ExpCardList = () => {
   return (
         
-    <div  className='bg-white p-4'>
-        <div className='mt-1 d-flex '>
+    <div  className='p-4 background-color'>
+        <div className='mt-1 d-flex text-color '>
        {demoData.map(item =>{
-           return <div className='ms-1'>
+           return <div className='ms-1 '>
             <div className="fs-4">     
                 <span>{item.title}</span>
             </div>
@@ -21,7 +21,10 @@ export const ExpCardList = () => {
             <br />
             <span>{item.description}</span>
             <br />
-            <span>technolgies :{item.technolgies.join(', ')}</span>
+            <span >technolgies : <span className='text-success'>
+                {item.technolgies.join(', ')}
+            </span>
+            </span>
         </div>
        })} 
        </div>

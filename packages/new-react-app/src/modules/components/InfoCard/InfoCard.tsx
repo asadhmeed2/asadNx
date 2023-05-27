@@ -15,7 +15,7 @@ const demoData = {
 
 export const InfoCard = () => {
   return (
-    <Card className={cn(styles.card,'p-3')}>
+    <Card className={cn(styles.card,'p-3 text-color background-color')}>
         <Container className={styles.container}>
             <Row>
                 <Col sm="12" md="6" className={styles.name}>

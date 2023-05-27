@@ -17,7 +17,7 @@ export const ProjectsCardList = () => {
     {
       demodata.map((item)=>{
 
-       return <Card className='me-1 p-2'>
+       return <Card className='me-1 p-2 background-color text-color'>
                   <div className="">
                     <span>{item.title}</span>
                   </div>
