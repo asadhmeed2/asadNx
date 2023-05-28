@@ -5,7 +5,7 @@ description:'Working for two months in a team and maintenance and add new featur
 technolgies: ["javascript", "react" , "HTML", "CSS", "MaterialUi" ,'flask']},
 {id:1,title:'Jonior Frontend Developer', subTitle:'2022-2023 Runnableweb',
 description:'working in a R&D team as a Frontend Developer',
-technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap"]}]
+technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap", 'github']}]
 
 export const ExpCardList = () => {
   return (
