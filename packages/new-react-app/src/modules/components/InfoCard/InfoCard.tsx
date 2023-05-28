@@ -4,13 +4,12 @@ import { Card, Col, Container, Row } from 'react-bootstrap'
 import cn from 'classnames'
 
 import styles from './InfoCard.module.scss'
+import { UserInfo } from '@asadnx/shared-ts'
 
-const demoData = {
+const demoData:UserInfo = {
     name:'Asad Hmeed',
     title:'Junior Frontend Developer',
     experience:1,
-    
-
 } 
 
 export const InfoCard = () => {
