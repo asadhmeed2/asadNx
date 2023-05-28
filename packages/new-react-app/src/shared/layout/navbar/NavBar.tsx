@@ -21,7 +21,6 @@ export const NavBar = () => {
                 <Nav className="justify-content-end flex-grow-1 pe-3 ">
                   <Nav.Link href="/" className='text-white'>Home</Nav.Link>
                   
-                  
                 </Nav>
                 <Form className="d-flex">
                   <Form.Control
