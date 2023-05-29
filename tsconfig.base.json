@@ -16,7 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@asadnx/shared-ts": ["libs/shared-ts/src/index.ts"]
-    }
+    },
   },
   "exclude": ["node_modules", "tmp"]
 }
