@@ -8,7 +8,7 @@ import styles from './ProjectsCardList.module.scss'
 
 const demodata = [{id:'1', title:'Aba Hatuv  אבא חטוב', description:'', framwork:'react native',moreTecnologes:'',websiteUrl:'https://www.leptin4life.com/'},
 {id:'2', title:'yoyo delivery website', description:'', framwork:'nextjs',moreTecnologes:'',websiteUrl:'https://www.yoyo.delivery/'}
-,{id:'2', title:'yoyo delivery app', description:'', framwork:'expo react native ',moreTecnologes:'',websiteUrl:'https://www.yoyo.delivery/'}]
+,{id:'3', title:'yoyo delivery app', description:'', framwork:'expo react native ',moreTecnologes:'',websiteUrl:'https://www.yoyo.delivery/'}]
 
 export const ProjectsCardList = () => {
   return (
@@ -17,7 +17,7 @@ export const ProjectsCardList = () => {
     {
       demodata.map((item)=>{
 
-       return <Card className='me-1 p-2 background-color text-color'>
+       return <Card className='me-1 p-2 background-color text-color' key={item.id}>
                   <div className="">
                     <span>{item.title}</span>
                   </div>
