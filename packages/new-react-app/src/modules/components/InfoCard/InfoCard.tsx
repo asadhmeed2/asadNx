@@ -5,6 +5,7 @@ import cn from 'classnames'
 
 import axios from 'axios'
 
+
 import { UserInfo } from '@asadnx/shared-ts'
 import { AppEnv } from '../../../env'
 
@@ -28,10 +29,10 @@ export const InfoCard = () => {
     <Card className={cn(styles.card,'p-3 text-color background-color')}>
         <Container className={styles.container}>
             <Row>
-                <Col sm="12" md="6" className={styles.name}>
+                <Col sm="12" md="6" className={cn(styles.name,"d-flex justify-content-center")}>
                 <span className={styles.title}>{` Name :`}</span><span> {userInfo?.name}</span>
                 </Col>
-                <Col  sm="12" md="6"className={styles.name}>
+                <Col  sm="12" md="6"className={cn(styles.name,"d-flex justify-content-center")}>
                 <span className={styles.title}>{` Title :`} </span><span>{userInfo?.title}</span>
                 </Col>
             </Row>
