@@ -10,7 +10,7 @@
     "@nestjs/platform-express": "^9.1.1",
     "@nx/nest": "^16.2.1",
     "@swc/helpers": "~0.5.0",
-    "axios": "^1.0.0",
+    "axios": "^1.4.0",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.5",
     "classnames": "^2.3.2",
