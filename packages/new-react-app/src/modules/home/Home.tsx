@@ -12,16 +12,16 @@ export const Home = () => {
             </div>
             <InfoCard/>
 
-            <div className="text-white">
-            <h2>Experience</h2>
+            <div className="text-white mt-2">
+            <h2 className='text-center '>Experience</h2>
             </div>
 
             <div className="mt-2 px-4 ">
             <ExpCardList/>
             </div>
 
-            <div className="text-white">
-            <h2>projects that i take part of :</h2>
+            <div className="text-white mt-2">
+            <h2 className='text-center'>projects that i take part of </h2>
             </div>
 
             <div className="mt-2 px-4 ">
