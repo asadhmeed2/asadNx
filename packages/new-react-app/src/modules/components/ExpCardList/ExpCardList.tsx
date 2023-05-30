@@ -1,4 +1,5 @@
 import React from 'react'
+import { Col, Container, Row } from 'react-bootstrap'
 
 const demoData =[{id:1,title:'Jonior FullStak Developer', subTitle:'2022- Data lagoon (Practical project at a company in collaboration with Appleseeds)',
 description:'Working for two months in a team and maintenance and add new features to data lagoon financial web app.',
@@ -10,10 +11,10 @@ technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap",
 export const ExpCardList = () => {
   return (
         
-    <div  className='p-4 background-color'>
-        <div className='mt-1 d-flex text-color '>
+    <Container  className='p-3 background-color'>
+        <Row className='mt-1 d-flex text-color justify-content-center'>
        {demoData.map(item =>{
-           return <div className='ms-1 ' key={item.id}>
+           return <Col sm="12" md="5" className='ms-1 ' key={item.id}>
             <div className="fs-4">     
                 <span>{item.title}</span>
             </div>
@@ -25,9 +26,9 @@ export const ExpCardList = () => {
                 {item.technolgies.join(', ')}
             </span>
             </span>
-        </div>
+        </Col>
        })} 
-       </div>
-    </div>
+       </Row>
+    </Container>
   )
 }
