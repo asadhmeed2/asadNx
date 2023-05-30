@@ -3,7 +3,7 @@ import { Button, Container, Form, Nav, Navbar, Offcanvas } from 'react-bootstrap
 
 export const NavBar = () => {
   return (
-    <Navbar bg="dark" expand={'sm'} className="mb-3">
+    <Navbar bg="dark" expand={'sm'} className="mb-3 bg-black">
           <Container fluid>
             <Navbar.Brand href="#" className='text-white'>Portfolio</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand`} />
