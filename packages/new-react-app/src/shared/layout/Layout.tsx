@@ -9,7 +9,7 @@ export const Layout = ({children}:Props) => {
     <div>
         <Header/>
 
-        <main className='p-2'>
+        <main className=''>
             {children}
         </main>
     </div>

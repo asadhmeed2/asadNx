@@ -1,15 +1,24 @@
 import React from 'react'
+import { Image } from 'react-bootstrap'
+
+import cn from 'classnames'
+
 import { Layout } from '../../shared/layout'
 import { ExpCardList, InfoCard ,ProjectsCardList} from '../components'
+
+import reactBg from '../../assets/images/react-bg.jpg'
 
 import styles from './Home.module.scss'
 
 export const Home = () => {
     return (
         <Layout>
-            <div className="">
-            <i className="bi bi-file-earmark-person"></i>
+            <div className={cn("position-absolute w-100",styles.imageWrapper)}>
+                <Image src={reactBg} className={styles.bgImage}/>
             </div>
+
+            <div className={cn("position-absolute",styles.content)}>
+            
             <InfoCard/>
 
             <div className="text-white mt-2">
@@ -26,6 +35,7 @@ export const Home = () => {
 
             <div className="mt-2 px-4 ">
             <ProjectsCardList/>
+            </div>
             </div>
         </Layout>
     )
