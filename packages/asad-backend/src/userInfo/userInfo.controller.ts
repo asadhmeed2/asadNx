@@ -11,6 +11,12 @@ getUserExperience(){
     return this._userInfoSvc.getUserExperience();
 }
 
+@Get('/projects')
+getUserProjects(){
+    return this._userInfoSvc.getUserProjects();
+}
+
+
 @Get('/')
 getUserInfo(){
     return this._userInfoSvc.getUserInfo();

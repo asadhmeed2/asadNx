@@ -12,3 +12,12 @@ export type UserExperience ={
     description:string;
     technolgies: string[];
 }
+
+export type UserProject={
+    id:string;
+    title:string;
+    description:string;
+    framwork:string;
+    moreTecnologes:string;
+    websiteUrl:string;
+}                       

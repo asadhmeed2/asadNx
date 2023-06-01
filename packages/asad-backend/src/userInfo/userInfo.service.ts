@@ -1,11 +1,10 @@
 import { Injectable } from "@nestjs/common";
 
-import { UserExperience, UserInfo } from '@asadnx/shared-ts'
+import { UserExperience, UserInfo, UserProject } from '@asadnx/shared-ts'
 
 @Injectable({})
 export class UserInfoService{
     getUserInfo(){
-
         const demoData : UserInfo = {
             name:'Asad Hmeed',
             title:'Junior Frontend Developer',
@@ -17,7 +16,6 @@ export class UserInfoService{
     }
 
     getUserExperience(){
-
         const data : UserExperience[] =[
             {id:'1',title:'Jonior FullStak Developer', subTitle:'2022- Data lagoon (Practical project at a company in collaboration with Appleseeds)',
             description:'Working for two months in a team and maintenance and add new features to data lagoon financial web app.',
@@ -26,6 +24,17 @@ export class UserInfoService{
             description:'working in a R&D team as a Frontend Developer',
             technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap", 'github']}]
 
+
+        return data
+    }
+
+
+    getUserProjects(){
+        const data : UserProject[]= [  
+            {id:'1', title:'Aba Hatuv  אבא חטוב', description:'', framwork:'react native',moreTecnologes:'',websiteUrl:'https://www.leptin4life.com/'},
+            {id:'2', title:'yoyo delivery website', description:'', framwork:'nextjs',moreTecnologes:'',websiteUrl:'https://www.yoyo.delivery/'},
+            {id:'3', title:'yoyo delivery app', description:'', framwork:'expo react native ',moreTecnologes:'',websiteUrl:'https://www.yoyo.delivery/'}
+        ]
 
         return data
     }
