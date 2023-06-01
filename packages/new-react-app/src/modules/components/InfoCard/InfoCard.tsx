@@ -28,19 +28,31 @@ export const InfoCard = () => {
   return (
     <Card className={cn(styles.card,'p-3 text-color background-color')}>
         <Container className={styles.container}>
+
+            {/* name title */}
             <Row>
                 <Col sm="12" md="6" className={cn(styles.name,"d-flex justify-content-center")}>
-                <span className={styles.title}>{` Name :`}</span><span> {userInfo?.name}</span>
+                <span> <span className={styles.title}>{` Name : `}</span> {userInfo?.name}</span>
                 </Col>
                 <Col  sm="12" md="6"className={cn(styles.name,"d-flex justify-content-center")}>
-                <span className={styles.title}>{` Title :`} </span><span>{userInfo?.title}</span>
+                <span> <span className={styles.title}>{` Title : `} </span>{userInfo?.title}</span>
                 </Col>
             </Row>
+
+            {/* experience */}
             <Row>
                 <Col sm="12" md="12" className={'d-flex justify-content-center mt-2'}>
-                <span className={styles.title}>{` Experience :`}</span> <span>{userInfo?.experience} {` year ${userInfo?.experience ?? 0 >1 ?'\'s':""}`}</span>
+                 <span><span className={styles.title}> {` Experience : `}</span> {userInfo?.experience} {` year ${userInfo?.experience ? userInfo?.experience > 1 ?'\'s':"":0}`}</span>
                 </Col>
-                
+            </Row>
+
+            {/* linkedin */}
+            <Row>
+                <Col sm="12" md="12" className={'d-flex justify-content-center mt-2'}>
+                 <span><span className={styles.title}> {` Lenkedin : `}
+                 </span> <a rel="noopener noreferrer" href={userInfo?.linkedinUrl} target="_blank" className={styles.linkedinUrl}> to linkedin page</a> 
+                 </span>
+                </Col>
             </Row>
         </Container>
     </Card>

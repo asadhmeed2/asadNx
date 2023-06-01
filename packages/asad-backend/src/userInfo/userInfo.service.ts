@@ -10,6 +10,7 @@ export class UserInfoService{
             name:'Asad Hmeed',
             title:'Junior Frontend Developer',
             experience:1,
+            linkedinUrl:`https://www.linkedin.com/in/asad-hmeed-173a46130`
         } 
 
         return demoData
