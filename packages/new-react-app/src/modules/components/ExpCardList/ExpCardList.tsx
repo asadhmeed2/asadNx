@@ -17,8 +17,6 @@ export const ExpCardList = () => {
 
       const res = await axios.get<UserExperience[]>(`${AppEnv.baseUrl}/userInfo/experience`)
 
-      console.log("🚀 ~ file: ExpCardList.tsx:20 ~ res:", res.data)
-
       setExperienceList(res.data)
 
     }catch(err){
