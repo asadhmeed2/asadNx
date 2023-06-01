@@ -5,6 +5,12 @@ import { UserInfoService } from "./userInfo.service";
 export class UserInfoController{
 constructor(private _userInfoSvc:UserInfoService){}
 
+
+@Get('/experience')
+getUserExperience(){
+    return this._userInfoSvc.getUserExperience();
+}
+
 @Get('/')
 getUserInfo(){
     return this._userInfoSvc.getUserInfo();

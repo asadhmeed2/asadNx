@@ -1,19 +1,40 @@
-import React from 'react'
+import { UserExperience } from '@asadnx/shared-ts'
+import axios from 'axios'
+import { AppEnv } from '../../../env'
+import React, { useEffect, useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 
-const demoData =[{id:1,title:'Jonior FullStak Developer', subTitle:'2022- Data lagoon (Practical project at a company in collaboration with Appleseeds)',
-description:'Working for two months in a team and maintenance and add new features to data lagoon financial web app.',
-technolgies: ["javascript", "react" , "HTML", "CSS", "MaterialUi" ,'flask']},
-{id:2,title:'Jonior Frontend Developer', subTitle:'2022-2023 Runnableweb',
-description:'working in a R&D team as a Frontend Developer',
-technolgies: ["typescript", "react" ,"react native", "HTML", "CSS", "bootstrap", 'github']}]
 
 export const ExpCardList = () => {
+
+  const [experienceList , setExperienceList] = useState<UserExperience[]>([])
+
+
+  useEffect(() => {
+    
+  (async()=>{
+    try{
+
+      const res = await axios.get<UserExperience[]>(`${AppEnv.baseUrl}/userInfo/experience`)
+
+      console.log("🚀 ~ file: ExpCardList.tsx:20 ~ res:", res.data)
+
+      setExperienceList(res.data)
+
+    }catch(err){
+      console.error(err);
+    }
+  })()
+    
+  }, [])
+  
+
+
   return (
         
     <Container  className='p-3 background-color'>
         <Row className='mt-1 d-flex text-color justify-content-center'>
-       {demoData.map(item =>{
+       {experienceList.map(item =>{
            return <Col sm="12" md="5" className='ms-1 ' key={item.id}>
             <div className="fs-4">     
                 <span>{item.title}</span>
