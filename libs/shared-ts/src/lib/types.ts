@@ -4,3 +4,11 @@ export type UserInfo ={
     experience: number;
     linkedinUrl:string
 }
+
+export type UserExperience ={
+    id:string;
+    title:string;
+    subTitle:string;
+    description:string;
+    technolgies: string[];
+}
