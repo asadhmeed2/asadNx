@@ -4,6 +4,7 @@ import styles from './app.module.scss';
 import NxWelcome from './nx-welcome';
 
 import { Route, Routes, Link } from 'react-router-dom';
+import { Home } from '../modules/home';
 
 export function App() {
   return (
@@ -13,10 +14,7 @@ export function App() {
         <Route
           path="/"
           element={
-            <div>
-              This is the generated root route.{' '}
-              <Link to="/page-2">Click here for page 2.</Link>
-            </div>
+            <Home/>
           }
         />
         <Route
