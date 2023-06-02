@@ -58,7 +58,7 @@ export const ExpCardList = () => {
                 })} 
               </Row>
           </Container>}
-          {loading && <Spinner variant='white'/>}
+        {loading && <Spinner variant='white'/>}
     </>
   )
 }
