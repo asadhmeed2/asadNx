@@ -1,15 +1,16 @@
 import React from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
+import { UserInfo } from '../form'
 
 export const Home = () => {
   return (
     <div><Tabs
-    defaultActiveKey="profile"
+    defaultActiveKey="Info"
       id="uncontrolled-tab-example"
       className="mb-3"
     >
       <Tab eventKey="userInfo" title="Info">
-        Tab content for Home
+        <UserInfo/>
       </Tab>
       <Tab eventKey="UserExperience" title="Experience">
         Tab content for Profile
