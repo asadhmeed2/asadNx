@@ -5,7 +5,7 @@ import { UserInfo } from '../form'
 export const Home = () => {
   return (
     <div><Tabs
-    defaultActiveKey="Info"
+    defaultActiveKey="userInfo"
       id="uncontrolled-tab-example"
       className="mb-3"
     >
