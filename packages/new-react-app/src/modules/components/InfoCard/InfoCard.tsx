@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row, Spinner } from 'react-bootstrap'
 
 import cn from 'classnames'
 
@@ -16,17 +16,29 @@ import styles from './InfoCard.module.scss'
 export const InfoCard = () => {
 
     const [userInfo,setUserInfo]= useState<UserInfo | undefined>(undefined)
+    const [loading,setLoading] = useState<boolean>(false)
 
     useEffect(() => {
         (async ()=>{
-            const res = await axios.get<UserInfo>(`${AppEnv.baseUrl}/userInfo`);
-            setUserInfo(res.data)
+            try{
+
+                setLoading(true)
+                
+                const res = await axios.get<UserInfo>(`${AppEnv.baseUrl}/userInfo`);
+                
+                setUserInfo(res.data)
+            }catch(err){
+                console.error(err);
+            }finally{
+                setLoading(false);
+            }
         })()
     }, [])
     
 
   return (
-    <Card className={cn(styles.card,'p-3 text-color background-color')}>
+    <>
+    {!loading &&<Card className={cn(styles.card,'p-3 text-color background-color')}>
         <Container className={styles.container}>
 
             {/* name title */}
@@ -55,6 +67,8 @@ export const InfoCard = () => {
                 </Col>
             </Row>
         </Container>
-    </Card>
+    </Card>}
+    {loading && <Spinner variant='white'/>}
+    </>
   )
 }
