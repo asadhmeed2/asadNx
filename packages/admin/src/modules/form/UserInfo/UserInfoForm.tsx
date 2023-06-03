@@ -33,7 +33,7 @@ export const UserInfoForm = () => {
                 <div className={styles.input} id={EUserInfoFormNames.NAME}>
                     <label htmlFor={EUserInfoFormNames.NAME}>User Info :</label>
                     <Field name={EUserInfoFormNames.NAME} component={AppInput}/>
-                    <ErrorMessage name={EUserInfoFormNames.NAME}/>
+                    <ErrorMessage name={EUserInfoFormNames.NAME} />
                 </div>
 
                 <div className="">
