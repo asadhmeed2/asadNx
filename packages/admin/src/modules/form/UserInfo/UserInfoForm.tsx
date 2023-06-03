@@ -2,6 +2,8 @@ import React from 'react'
 import * as Yup from 'yup'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 
+import cn from 'classnames'
+
 import { EUserInfoFormNames, UserInfo } from '@asadnx/shared-ts'
 
 import { AppInput } from '../../../shared'
@@ -37,8 +39,8 @@ export const UserInfoForm = () => {
         >
             <Form>
                 {/* name */}
-                <div className={styles.input} id={EUserInfoFormNames.NAME}>
-                    <span>User Name :</span>
+                <div className={cn(styles.input)} id={EUserInfoFormNames.NAME}>
+                    <span className={styles.lable}>User Name :</span>
                     <Field name={EUserInfoFormNames.NAME} component={AppInput}/>
                 </div>
 
@@ -46,7 +48,7 @@ export const UserInfoForm = () => {
 
                 {/* title */}
                 <div className={styles.input} id={EUserInfoFormNames.TITLE}>
-                    <span >User Title :</span>
+                    <span className={styles.lable}>User Title :</span>
                     <Field name={EUserInfoFormNames.TITLE} component={AppInput}/>
                 </div>
 
@@ -54,7 +56,7 @@ export const UserInfoForm = () => {
 
                 {/* experience */}
                 <div className={styles.input} id={EUserInfoFormNames.EXP}>
-                    <span >User Experience :</span>
+                    <span className={styles.lable} >User Experience :</span>
                     <Field name={EUserInfoFormNames.EXP} component={AppInput}/>  
                 </div>
 
@@ -62,13 +64,13 @@ export const UserInfoForm = () => {
 
                 {/* linkedin url */}
                 <div className={styles.input} id={EUserInfoFormNames.LINKEDIN_URL}>
-                    <span >User Linkedin Url :</span>
+                    <span className={styles.lable}>User Linkedin Url :</span>
                     <Field name={EUserInfoFormNames.LINKEDIN_URL} component={AppInput}/>
                 </div>
 
                 <ErrorMessage name={EUserInfoFormNames.LINKEDIN_URL} />
 
-                <div className="">
+                <div className="text-center mt-5">
                   <Button type='submit'>submit</Button>
                 </div>
             </Form>
