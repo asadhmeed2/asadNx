@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useCallback } from 'react'
+
+import { Button } from 'react-bootstrap'
+
 import * as Yup from 'yup'
+
 import { ErrorMessage, Field, Form, Formik } from 'formik'
+
 
 import cn from 'classnames'
 
 import { EUserInfoFormNames, UserInfo } from '@asadnx/shared-ts'
 
 import { AppInput } from '../../../shared'
-import { Button } from 'react-bootstrap'
 
+import { userService } from '../../../services'
 
 import styles from './UserInfoForm.module.scss'
 
@@ -29,12 +34,23 @@ const initValues : Partial<UserInfo> = {
     [EUserInfoFormNames.LINKEDIN_URL]: undefined   
 }
 
+
+
 export const UserInfoForm = () => {
+
+    const onSubmit = useCallback(
+      (values:Partial<UserInfo>) => {
+        userService.updateUserInfo(values) 
+      },
+      [],
+    )
+    
+
   return (
     <div>
 
         <Formik initialValues={initValues} 
-                onSubmit={(values,formikHelpers)=>{console.log(values);}}
+                onSubmit={(values,formikHelpers)=>{onSubmit(values)}}
                 validationSchema={schema}
         >
             <Form>
