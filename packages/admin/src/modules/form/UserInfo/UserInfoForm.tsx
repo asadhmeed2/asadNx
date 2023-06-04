@@ -60,7 +60,9 @@ export const UserInfoForm = () => {
                     <Field name={EUserInfoFormNames.NAME} component={AppInput}/>
                 </div>
 
+                <div className={styles.error}>
                 <ErrorMessage name={EUserInfoFormNames.NAME} />
+                </div>
 
                 {/* title */}
                 <div className={styles.input} id={EUserInfoFormNames.TITLE}>
@@ -68,7 +70,10 @@ export const UserInfoForm = () => {
                     <Field name={EUserInfoFormNames.TITLE} component={AppInput}/>
                 </div>
 
-                <ErrorMessage name={EUserInfoFormNames.TITLE} />
+                <div className={styles.error}>
+                    <ErrorMessage name={EUserInfoFormNames.TITLE} />
+                </div>
+
 
                 {/* experience */}
                 <div className={styles.input} id={EUserInfoFormNames.EXP}>
@@ -76,7 +81,9 @@ export const UserInfoForm = () => {
                     <Field name={EUserInfoFormNames.EXP} component={AppInput}/>  
                 </div>
 
+                <div className={styles.error}>
                 <ErrorMessage name={EUserInfoFormNames.EXP} />
+                </div>
 
                 {/* linkedin url */}
                 <div className={styles.input} id={EUserInfoFormNames.LINKEDIN_URL}>
@@ -84,7 +91,9 @@ export const UserInfoForm = () => {
                     <Field name={EUserInfoFormNames.LINKEDIN_URL} component={AppInput}/>
                 </div>
 
+                <div className={styles.error}>
                 <ErrorMessage name={EUserInfoFormNames.LINKEDIN_URL} />
+                </div>
 
                 <div className="text-center mt-5">
                   <Button type='submit'>submit</Button>
