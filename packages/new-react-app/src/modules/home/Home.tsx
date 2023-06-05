@@ -13,11 +13,10 @@ import styles from './Home.module.scss'
 export const Home = () => {
     return (
         <Layout>
-            <div className={cn("position-absolute w-100",styles.imageWrapper)}>
-                <Image src={reactBg} className={styles.bgImage}/>
-            </div>
+            <div className={cn(" w-100",styles.imageWrapper)}>
+                <Image src={reactBg} className={cn('z-0 position-absolute',styles.bgImage)}/>
 
-            <div className={cn("position-absolute",styles.content)}>
+            <div className={cn("position-absolute mt-5 pt-4 z-1",styles.content)}>
             
             <InfoCard/>
 
@@ -36,6 +35,8 @@ export const Home = () => {
             <div className="mt-2 px-4 ">
             <ProjectsCardList/>
             </div>
+            </div>
+
             </div>
         </Layout>
     )
