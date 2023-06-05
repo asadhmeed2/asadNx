@@ -6,7 +6,7 @@ import cn from 'classnames'
 import axios from 'axios'
 
 
-import { UserInfo } from '@asadnx/shared-ts'
+import { UserInfo, userService } from '@asadnx/shared-ts'
 import { AppEnv } from '../../../env'
 
 import styles from './InfoCard.module.scss'
@@ -20,18 +20,12 @@ export const InfoCard = () => {
 
     useEffect(() => {
         (async ()=>{
-            try{
+           setLoading(true);
 
-                setLoading(true)
-                
-                const res = await axios.get<UserInfo>(`${AppEnv.baseUrl}/userInfo`);
-                
-                setUserInfo(res.data)
-            }catch(err){
-                console.error(err);
-            }finally{
-                setLoading(false);
-            }
+          const res =  await userService.getUserInfo(AppEnv.baseUrl);
+
+          setUserInfo(res);
+          setLoading(false);
         })()
     }, [])
     

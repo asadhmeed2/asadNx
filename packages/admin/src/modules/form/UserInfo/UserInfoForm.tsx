@@ -9,11 +9,11 @@ import { ErrorMessage, Field, Form, Formik } from 'formik'
 
 import cn from 'classnames'
 
-import { EUserInfoFormNames, UserInfo } from '@asadnx/shared-ts'
+import { EUserInfoFormNames, UserInfo, userService } from '@asadnx/shared-ts'
 
 import { AppInput } from '../../../shared'
 
-import { userService } from '../../../services'
+
 
 import styles from './UserInfoForm.module.scss'
 
