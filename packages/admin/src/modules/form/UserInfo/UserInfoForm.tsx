@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
 
 import { Button } from 'react-bootstrap'
 
@@ -14,29 +14,35 @@ import { EUserInfoFormNames, UserInfo, userService } from '@asadnx/shared-ts'
 import { AppInput } from '../../../shared'
 
 
+import { AppEnv } from '../../../env'
 
 import styles from './UserInfoForm.module.scss'
 
 
 const schema = Yup.object({
-[EUserInfoFormNames.NAME]: Yup.string().required('enter your name'),
-[EUserInfoFormNames.TITLE]: Yup.string().required('enter your title'),
-[EUserInfoFormNames.EXP]: Yup.string().matches( /^\d{0,2}$/,'enter a number'),
+[EUserInfoFormNames.NAME]: Yup.string().required('Name is required'),
+[EUserInfoFormNames.TITLE]: Yup.string().required('Title is required'),
+[EUserInfoFormNames.EXP]: Yup.string().matches( /^\d{0,2}$/,'enter a number up to two digits').required('Experience is required'),
 [EUserInfoFormNames.LINKEDIN_URL]: Yup.string().matches(/^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/,
-'enter a valid url ')
+'enter a valid url ').required('linkedin url is required')
 
 })
 
-const initValues : Partial<UserInfo> = {
-    [EUserInfoFormNames.NAME]: undefined,
-    [EUserInfoFormNames.TITLE]: undefined,
-    [EUserInfoFormNames.EXP]: undefined,
-    [EUserInfoFormNames.LINKEDIN_URL]: undefined   
-}
-
-
-
 export const UserInfoForm = () => {
+
+    const [userInfo,setUserInfo]= useState<UserInfo | undefined>(undefined)
+    const [loading,setLoading] = useState<boolean>(false)
+
+    useEffect(() => {
+        (async ()=>{
+           setLoading(true);
+
+          const res =  await userService.getUserInfo(AppEnv.baseUrl);
+
+          setUserInfo(res);
+          setLoading(false);
+        })()
+    }, [])
 
     const onSubmit = useCallback(
       (values:Partial<UserInfo>) => {
@@ -44,6 +50,13 @@ export const UserInfoForm = () => {
       },
       [],
     )
+
+    const initValues : Partial<UserInfo> = useMemo(()=>({
+        [EUserInfoFormNames.NAME]: userInfo ? userInfo.name: undefined,
+        [EUserInfoFormNames.TITLE]: userInfo ? userInfo.title: undefined,
+        [EUserInfoFormNames.EXP]: userInfo ? userInfo.experience: undefined,
+        [EUserInfoFormNames.LINKEDIN_URL]: userInfo ? userInfo.linkedinUrl: undefined   
+    }),[userInfo])
     
 
   return (
@@ -52,6 +65,7 @@ export const UserInfoForm = () => {
         <Formik initialValues={initValues} 
                 onSubmit={(values,formikHelpers)=>{onSubmit(values)}}
                 validationSchema={schema}
+                enableReinitialize
         >
             <Form>
                 {/* name */}
