@@ -31,16 +31,16 @@ const schema = Yup.object({
 export const UserInfoForm = () => {
 
     const [userInfo,setUserInfo]= useState<UserInfo | undefined>(undefined)
-    const [loading,setLoading] = useState<boolean>(false)
+
 
     useEffect(() => {
         (async ()=>{
-           setLoading(true);
+           
 
           const res =  await userService.getUserInfo(AppEnv.baseUrl);
 
           setUserInfo(res);
-          setLoading(false);
+          
         })()
     }, [])
 
