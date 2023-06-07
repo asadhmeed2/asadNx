@@ -4,7 +4,7 @@ import { Col, Container, Row, Spinner } from 'react-bootstrap'
 
 import axios from 'axios'
 
-import { UserExperience } from '@asadnx/shared-ts'
+import { UserExperience, userService } from '@asadnx/shared-ts'
 
 import { AppEnv } from '../../../env'
 
@@ -20,10 +20,9 @@ export const ExpCardList = () => {
       try{
         setLoading(true)
 
-        const res = await axios.get<UserExperience[]>(`${AppEnv.baseUrl}/userInfo/experience`)
+        const res =  await userService.getUserExp(AppEnv.baseUrl);
   
-        setExperienceList(res.data)
-  
+        setExperienceList(res)
       }catch(err){
         console.error(err);
       }finally{
