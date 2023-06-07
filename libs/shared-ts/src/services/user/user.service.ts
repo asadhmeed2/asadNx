@@ -1,4 +1,4 @@
-import { UserExperience, UserInfo } from "../../lib/types";
+import { UserExperience, UserInfo, UserProject } from "../../lib/types";
 
 import axios from 'axios'
 
@@ -22,6 +22,16 @@ class UserService {
    
                         
             const res = await axios.get<UserExperience[]>(`${baseUrl}/userInfo/experience`)
+            return res.data
+        }catch(err){
+            console.error(err);
+            return []
+        }
+    }
+
+    async getUserProjects(baseUrl:string){
+        try{
+            const res = await axios.get<UserProject[]>(`${baseUrl}/userInfo/projects`)
             return res.data
         }catch(err){
             console.error(err);

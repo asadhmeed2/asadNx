@@ -5,7 +5,7 @@ import cn from 'classnames'
 
 import axios from 'axios'
 
-import { UserProject } from '@asadnx/shared-ts'
+import { UserProject, userService } from '@asadnx/shared-ts'
 
 import { AppEnv } from '../../../env'
 
@@ -23,9 +23,9 @@ export const ProjectsCardList = () => {
     (async()=>{
       try{
         setLoading(true)
-        const res = await axios.get<UserProject[]>(`${AppEnv.baseUrl}/userInfo/projects`)
+        const res = await userService.getUserProjects(AppEnv.baseUrl)
   
-        setProjects(res.data);
+        setProjects(res);
   
       }catch(err){
         console.error(err);
