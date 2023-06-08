@@ -4,3 +4,10 @@ export enum EUserInfoFormNames {
     EXP= 'experience',
     LINKEDIN_URL= 'linkedinUrl'
 }
+
+export enum EUserExperienceFormNames {
+    TITLE="title",
+    SUB_TITLE="subTitle",
+    DESCRIPTION="description",
+    TECHNOLGIES= "technolgies",
+}

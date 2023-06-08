@@ -43,6 +43,10 @@ class UserService {
         console.log('updateUserInfo ',userInfo);
     }
 
+    updateUserExperience(userExp:Partial<UserExperience>){
+        console.log('updateUserExperience',userExp);
+    }
+
 }
 
 export const userService = new UserService();
