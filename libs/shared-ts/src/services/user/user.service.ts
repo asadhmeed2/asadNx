@@ -13,7 +13,7 @@ class UserService {
             return res.data
         }catch(err){
             console.error(err);
-            return []
+            return undefined
         }
     }
 
