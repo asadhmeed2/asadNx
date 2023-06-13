@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const experenceCard = () => {
+export const experinceCard = () => {
   return (
     <div>experenceCard</div>
   )
