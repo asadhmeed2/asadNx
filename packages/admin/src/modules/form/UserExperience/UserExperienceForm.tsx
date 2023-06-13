@@ -26,7 +26,11 @@ export const UserExperienceForm = () => {
 
   return (
     <div>
+      {userExperienc.map(item=>{
+        return<div>{item.title}</div>
+      })}
 
+      <button>add experience</button>
     </div>
   )
 }
