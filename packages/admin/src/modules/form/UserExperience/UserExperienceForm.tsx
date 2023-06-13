@@ -2,6 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import {  UserExperience, userService } from '@asadnx/shared-ts'
 import { AppEnv } from '../../../env'
+import { ExperinceCard } from './components'
 
 
 
@@ -27,7 +28,7 @@ export const UserExperienceForm = () => {
   return (
     <div>
       {userExperienc.map(item=>{
-        return<div>{item.title}</div>
+        return<ExperinceCard userExperince={item}/>
       })}
 
       <button>add experience</button>
