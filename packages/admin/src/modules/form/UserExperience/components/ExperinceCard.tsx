@@ -14,7 +14,7 @@ export const ExperinceCard = ({userExperince}:Props) => {
       </div>
 
       <div className="">
-        <span>{userExperince.subTitle}</span>
+      <span>{userExperince.subTitle}</span>
       </div>
 
       <div className="">
@@ -22,7 +22,7 @@ export const ExperinceCard = ({userExperince}:Props) => {
       </div>
 
       <div className="">
-       <span>{userExperince.technolgies.join(',')}</span>
+       <span>{`technolgies : `}</span><span>{userExperince.technolgies.join(',')}</span>
       </div>
     </Card>
   )
