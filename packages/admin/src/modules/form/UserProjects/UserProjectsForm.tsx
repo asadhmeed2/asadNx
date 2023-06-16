@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const UserProjects = () => {
+export const UserProjectsForm = () => {
   return (
     <div>UserProjects</div>
   )
