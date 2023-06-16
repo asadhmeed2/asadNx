@@ -40,7 +40,7 @@ export const UserExperienceTab = () => {
   return (
     <div>
       {userExperienc.map(item=>{
-        return<ExperinceCard userExperince={item}/>
+        return<ExperinceCard key={item.id} userExperince={item}/>
       })}
 
       <Button onClick={onShowExrnceModal}>add experience</Button>   
