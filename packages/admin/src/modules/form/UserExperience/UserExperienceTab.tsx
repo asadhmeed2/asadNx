@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useState } from 'react'
 
 import {  UserExperience, userService } from '@asadnx/shared-ts'
 import { AppEnv } from '../../../env'
-import { ExperinceCard } from './components'
+import { ExperinceCard, UserExperinceModal } from './components'
 import { Button } from 'react-bootstrap'
 
 
@@ -28,8 +28,12 @@ export const UserExperienceTab = () => {
         })()
     }, [])
 
-    const onAddExpince = useCallback(()=>{
+    const onShowExrnceModal = useCallback(()=>{
       setShowExpFormModal(true)
+    },[])
+    
+    const onHideExprinceModal = useCallback(()=>{
+      setShowExpFormModal(false)
     },[])
     
 
@@ -39,7 +43,10 @@ export const UserExperienceTab = () => {
         return<ExperinceCard userExperince={item}/>
       })}
 
-      <Button onClick={onAddExpince}>add experience</Button>
+      <Button onClick={onShowExrnceModal}>add experience</Button>   
+
+
+      {showExpFormModal && <UserExperinceModal show={showExpFormModal} onHide={onHideExprinceModal}/>}
     </div>
   )
 }
