@@ -10,7 +10,7 @@ import { EUserExperienceFormNames, UserExperience } from '@asadnx/shared-ts';
 
 import { AppInput } from '../../../../../shared';
 
-import styles from './UserExperinceModal.module.scss'
+import styles from './UserExprinceModal.module.scss'
 
 type Props ={
     show:boolean;
