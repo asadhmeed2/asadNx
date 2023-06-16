@@ -50,7 +50,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
             <Form>
               {/* title */}
               <div className={styles.input} id={EUserExperienceFormNames.TITLE}>
-                    <span className={styles.lable}>User Name :</span>
+                    <span className={styles.lable}>Title :</span>
                     <Field name={EUserExperienceFormNames.TITLE} component={AppInput}/>
                 </div>
 
@@ -60,7 +60,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
 
                 {/* sub title */}
                 <div className={styles.input} id={EUserExperienceFormNames.SUB_TITLE}>
-                    <span className={styles.lable}>User Title :</span>
+                    <span className={styles.lable}>SubTitle :</span>
                     <Field name={EUserExperienceFormNames.SUB_TITLE} component={AppInput}/>
                 </div>
 
@@ -71,7 +71,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
 
                 {/* description */}
                 <div className={styles.input} id={EUserExperienceFormNames.DESCRIPTION}>
-                    <span className={styles.lable} >User Experience :</span>
+                    <span className={styles.lable} >Description :</span>
                     <Field name={EUserExperienceFormNames.DESCRIPTION} type="textbox" component={AppInput}/>  
                 </div>
 
@@ -81,7 +81,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
 
                 {/*technolgies */}
                 <div className={styles.input} id={EUserExperienceFormNames.TECHNOLGIES}>
-                    <span className={styles.lable}>User Linkedin Url :</span>
+                    <span className={styles.lable}>Technolgies :</span>
                     <Field name={EUserExperienceFormNames.TECHNOLGIES} component={AppInput}/>
                 </div>
 
