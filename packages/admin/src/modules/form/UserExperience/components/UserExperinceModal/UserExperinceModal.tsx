@@ -2,7 +2,7 @@ import { ErrorMessage, Field, Form, Formik, FormikProps } from 'formik';
 
 
 import React, { useCallback, useMemo, useState } from 'react'
-import { Button, Modal } from 'react-bootstrap'
+import { Button, Modal ,Form as bsForm} from 'react-bootstrap'
 
 import * as Yup from 'yup'
 
@@ -22,7 +22,7 @@ const schema = Yup.object({
     [EUserExperienceFormNames.TITLE]: Yup.string().required('Name is required'),
     [EUserExperienceFormNames.SUB_TITLE]: Yup.string().required('Title is required'),
     [EUserExperienceFormNames.DESCRIPTION]: Yup.string().required('description is required'),
-    [EUserExperienceFormNames.TECHNOLGIES]: Yup.string().required('Enter at least one technolgy')
+    [EUserExperienceFormNames.TECHNOLGIES]: Yup.array().required('Enter at least one technolgy')
     
     })
 
@@ -39,16 +39,16 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
     const [technolgy,setTechnolgy] = useState<string>('');
 
 
-    const onTechnolgyChange= useCallback((frm:FormikProps<Partial<UserExperience>>,event:Event)=>{
+    const onTechnolgyChange= useCallback((event:React.ChangeEvent<HTMLInputElement>)=>{
 
-        
+       setTechnolgy(event.target.value) 
     },[])
 
 
     const onAddTechnolgy = useCallback((frm:FormikProps<Partial<UserExperience>>)=>{
         if(technolgy){
-
             frm.setFieldValue(EUserExperienceFormNames.TECHNOLGIES,[...frm.values.technolgies ? frm.values.technolgies:[],technolgy])
+            setTechnolgy('')
         }
     },[technolgy])
 
@@ -88,7 +88,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
                 {/* description */}
                 <div className={styles.input} id={EUserExperienceFormNames.DESCRIPTION}>
                     <span className={styles.lable} >Description :</span>
-                    <Field name={EUserExperienceFormNames.DESCRIPTION} type="textbox" component={AppInput}/>  
+                    <Field name={EUserExperienceFormNames.DESCRIPTION} type="textarea" component={AppInput}/>  
                 </div>
 
                 <div className={styles.error}>
@@ -98,11 +98,15 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
                 {/*technolgies */}
                 <div className={styles.input} id={EUserExperienceFormNames.TECHNOLGIES}>
                     <span className={styles.lable}>Technolgies :</span>
-                    <Field  component={AppInput} onChange={(event:Event)=>onTechnolgyChange(props,event)}/>
-                    <Button onClick={}>submit</Button>
-               
+                    <bsForm.Control value={technolgy}  onChange={onTechnolgyChange}/>
+                    <Button onClick={()=>onAddTechnolgy(props)}>add</Button>
                 </div>
 
+                <div className="text-center">
+                    {props.values.technolgies ? props.values.technolgies?.join(','):''}
+                </div>
+
+                
                 <div className={styles.error}>
                 <ErrorMessage name={EUserExperienceFormNames.TECHNOLGIES} />
                 </div>
