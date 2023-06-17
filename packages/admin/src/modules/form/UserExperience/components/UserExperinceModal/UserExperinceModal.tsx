@@ -1,7 +1,7 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Field, Form, Formik, FormikProps } from 'formik';
 
 
-import React, { useMemo } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import { Button, Modal } from 'react-bootstrap'
 
 import * as Yup from 'yup'
@@ -36,6 +36,22 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
         [EUserExperienceFormNames.TECHNOLGIES]:  undefined   
     }),[])
 
+    const [technolgy,setTechnolgy] = useState<string>('');
+
+
+    const onTechnolgyChange= useCallback((frm:FormikProps<Partial<UserExperience>>,event:Event)=>{
+
+        
+    },[])
+
+
+    const onAddTechnolgy = useCallback((frm:FormikProps<Partial<UserExperience>>)=>{
+        if(technolgy){
+
+            frm.setFieldValue(EUserExperienceFormNames.TECHNOLGIES,[...frm.values.technolgies ? frm.values.technolgies:[],technolgy])
+        }
+    },[technolgy])
+
   return (
     <Modal show={show} onHide={onHide}>
 
@@ -46,7 +62,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
         onSubmit={(values) => {
             console.log("🚀 ~ file: UserExperinceModal.tsx:111 ~ UserExperinceModal ~ values:", values)          
         }} >
-
+            {(props)=>
             <Form>
               {/* title */}
               <div className={styles.input} id={EUserExperienceFormNames.TITLE}>
@@ -82,7 +98,9 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
                 {/*technolgies */}
                 <div className={styles.input} id={EUserExperienceFormNames.TECHNOLGIES}>
                     <span className={styles.lable}>Technolgies :</span>
-                    <Field name={EUserExperienceFormNames.TECHNOLGIES} component={AppInput}/>
+                    <Field  component={AppInput} onChange={(event:Event)=>onTechnolgyChange(props,event)}/>
+                    <Button onClick={}>submit</Button>
+               
                 </div>
 
                 <div className={styles.error}>
@@ -92,7 +110,7 @@ export const UserExperinceModal = ({show,onHide}:Props) => {
                 <div className="text-center mt-5">
                   <Button type='submit'>submit</Button>
                 </div>           
-            </Form>
+            </Form>}
 
         </Formik>
         </Modal.Body>
