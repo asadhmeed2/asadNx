@@ -2,6 +2,7 @@ import React from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
 import { UserInfoForm } from '../form'
 import { UserExperienceTab } from '../form/UserExperience/UserExperienceTab'
+import { UserProjectsForm } from '../form/UserProjects'
 
 export const Home = () => {
   return (
@@ -18,7 +19,7 @@ export const Home = () => {
                 <UserExperienceTab/>
             </Tab>
             <Tab eventKey="UserProjects" title="Projects" >
-                Tab content for Contact
+               <UserProjectsForm/>
             </Tab>  
         </Tabs>
     </div>
