@@ -14,7 +14,8 @@ export enum EUserExperienceFormNames {
 
 export enum EUserProjectFormNames {
   TITLE = 'title',
-  SUB_TITLE = 'subTitle',
   DESCRIPTION = 'description',
-  TECHNOLGIES = 'technolgies',
+  FRAMWORK = 'framwork',
+  TECHNOLGIES = 'moreTecnologes',
+  WEBSITE_URL = 'websiteUrl',
 }
