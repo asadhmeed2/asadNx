@@ -13,6 +13,9 @@ import styles from './UserProjectForm.module.scss';
 
 const schema = Yup.object({
   [EUserProjectFormNames.TITLE]: Yup.string().required('Title is required'),
+  [EUserProjectFormNames.DESCRIPTION]: Yup.string().required(
+    'Description is required'
+  ),
 });
 
 export const UserProjectsForm = () => {
@@ -34,14 +37,30 @@ export const UserProjectsForm = () => {
         enableReinitialize
       >
         <Form>
-          {/* name */}
+          {/* title */}
           <div className={cn(styles.input)} id={EUserProjectFormNames.TITLE}>
-            <span className={styles.lable}>User Name :</span>
+            <span className={styles.lable}>Title :</span>
             <Field name={EUserProjectFormNames.TITLE} component={AppInput} />
           </div>
 
           <div className={styles.error}>
             <ErrorMessage name={EUserProjectFormNames.TITLE} />
+          </div>
+
+          {/* title */}
+          <div
+            className={cn(styles.input)}
+            id={EUserProjectFormNames.DESCRIPTION}
+          >
+            <span className={styles.lable}>Description :</span>
+            <Field
+              name={EUserProjectFormNames.DESCRIPTION}
+              component={AppInput}
+            />
+          </div>
+
+          <div className={styles.error}>
+            <ErrorMessage name={EUserProjectFormNames.DESCRIPTION} />
           </div>
 
           <div className="text-center mt-5">
