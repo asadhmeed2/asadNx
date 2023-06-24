@@ -22,6 +22,7 @@ export const UserProjectsForm = () => {
   const initValues: Partial<UserProject> = useMemo(
     () => ({
       [EUserProjectFormNames.TITLE]: undefined,
+      [EUserProjectFormNames.DESCRIPTION]: undefined,
     }),
     []
   );
