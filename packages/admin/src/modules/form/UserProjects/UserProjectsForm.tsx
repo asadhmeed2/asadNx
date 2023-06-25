@@ -48,7 +48,7 @@ export const UserProjectsForm = () => {
             <ErrorMessage name={EUserProjectFormNames.TITLE} />
           </div>
 
-          {/* title */}
+          {/* desctiption */}
           <div
             className={cn(styles.input)}
             id={EUserProjectFormNames.DESCRIPTION}
