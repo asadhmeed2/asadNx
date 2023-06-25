@@ -64,6 +64,15 @@ export const UserProjectsForm = () => {
             <ErrorMessage name={EUserProjectFormNames.DESCRIPTION} />
           </div>
 
+          {/* framwork */}
+          <div className={cn(styles.input)} id={EUserProjectFormNames.FRAMWORK}>
+            <span className={styles.lable}>Description :</span>
+            <Field name={EUserProjectFormNames.FRAMWORK} component={AppInput} />
+          </div>
+
+          <div className={styles.error}>
+            <ErrorMessage name={EUserProjectFormNames.FRAMWORK} />
+          </div>
           <div className="text-center mt-5">
             <Button type="submit">submit</Button>
           </div>
