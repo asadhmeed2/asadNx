@@ -16,6 +16,6 @@ export enum EUserProjectFormNames {
   TITLE = 'title',
   DESCRIPTION = 'description',
   FRAMWORK = 'framwork',
-  TECHNOLGIES = 'moreTecnologes',
+  TECHNOLGIES = 'moreTechnologes',
   WEBSITE_URL = 'websiteUrl',
 }
