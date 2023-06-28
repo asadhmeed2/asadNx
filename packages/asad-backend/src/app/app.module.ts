@@ -3,7 +3,9 @@ import { UserInfoModule } from '../userInfo/userInfo.module';
 
 import { MongooseModule } from '@nestjs/mongoose';
 
+import config from '../config/keys';
+
 @Module({
-  imports: [UserInfoModule, MongooseModule.forRoot('mongodb://localhost/nest')],
+  imports: [UserInfoModule, MongooseModule.forRoot(config.mongoURL)],
 })
 export class AppModule {}
