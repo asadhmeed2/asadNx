@@ -16,6 +16,9 @@ const schema = Yup.object({
   [EUserProjectFormNames.DESCRIPTION]: Yup.string().required(
     'Description is required'
   ),
+  [EUserProjectFormNames.FRAMWORK]: Yup.string().required(
+    'Framwork is required'
+  ),
 });
 
 export const UserProjectsForm = () => {
