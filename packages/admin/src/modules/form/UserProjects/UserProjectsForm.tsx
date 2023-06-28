@@ -19,6 +19,9 @@ const schema = Yup.object({
   [EUserProjectFormNames.FRAMWORK]: Yup.string().required(
     'Framwork is required'
   ),
+  [EUserProjectFormNames.WEBSITE_URL]: Yup.string().matches(
+    /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/
+  ),
 });
 
 export const UserProjectsForm = () => {
