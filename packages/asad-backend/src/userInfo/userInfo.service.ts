@@ -1,11 +1,7 @@
 import { Injectable } from '@nestjs/common';
 
-import { UserExperience, UserInfo, UserProject } from '@asadnx/shared-ts';
-import {
-  Experience,
-  ExperienceDocument,
-  ExperienceSchema,
-} from '../schemas/Experience.schema';
+import { UserInfo, UserProject } from '@asadnx/shared-ts';
+import { Experience, ExperienceDocument } from '../schemas/Experience.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 
