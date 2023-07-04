@@ -19,4 +19,4 @@ export class Experience {
   [EUserExperienceFormNames.TECHNOLGIES]: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(Experience);
+export const ExperienceSchema = SchemaFactory.createForClass(Experience);
