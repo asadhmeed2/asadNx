@@ -19,4 +19,4 @@ export class UserInfo {
   [EUserInfoFormNames.LINKEDIN_URL]: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(UserInfo);
+export const UserInfoSchema = SchemaFactory.createForClass(UserInfo);
