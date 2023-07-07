@@ -7,16 +7,16 @@ export type ExperienceDocument = HydratedDocument<Experience>;
 @Schema()
 export class Experience {
   @Prop()
-  [EUserExperienceFormNames.TITLE]: string;
+  title: string;
 
   @Prop()
-  [EUserExperienceFormNames.SUB_TITLE]: number;
+  subTitle: number;
 
   @Prop()
-  [EUserExperienceFormNames.DESCRIPTION]: string;
+  description: string;
 
   @Prop()
-  [EUserExperienceFormNames.TECHNOLGIES]: string;
+  technolgies: string;
 }
 
 export const ExperienceSchema = SchemaFactory.createForClass(Experience);
