@@ -7,8 +7,8 @@ import { Model } from 'mongoose';
 
 @Injectable({})
 export class UserInfoService {
-  //   @InjectModel(Experience.name)
-  //   private experienceModel: Model<ExperienceDocument>;
+  @InjectModel(Experience.name)
+  private experienceModel: Model<ExperienceDocument>;
 
   getUserInfo() {
     const demoData: UserInfo = {
@@ -22,48 +22,48 @@ export class UserInfoService {
   }
 
   getUserExperience() {
-    // const realData = this.experienceModel.find();
+    const realData = this.experienceModel.find();
 
-    // console.log(
-    //   '🚀 ~ file: userInfo.service.ts:31 ~ UserInfoService ~ getUserExperience ~ realData:',
-    //   realData
-    // );
+    console.log(
+      '🚀 ~ file: userInfo.service.ts:31 ~ UserInfoService ~ getUserExperience ~ realData:',
+      realData
+    );
 
-    const data: UserExperience[] = [
-      {
-        id: '1',
-        title: 'Jonior FullStak Developer',
-        subTitle:
-          '2022- Data lagoon (Practical project at a company in collaboration with Appleseeds)',
-        description:
-          'Working for two months in a team and maintenance and add new features to data lagoon financial web app.',
-        technolgies: [
-          'javascript',
-          'react',
-          'HTML',
-          'CSS',
-          'MaterialUi',
-          'flask',
-        ],
-      },
-      {
-        id: '2',
-        title: 'Jonior Frontend Developer',
-        subTitle: '2022-2023 Runnableweb',
-        description: 'working in a R&D team as a Frontend Developer',
-        technolgies: [
-          'typescript',
-          'react',
-          'react native',
-          'HTML',
-          'CSS',
-          'bootstrap',
-          'github',
-        ],
-      },
-    ];
+    // const data: UserExperience[] = [
+    //   {
+    //     id: '1',
+    //     title: 'Jonior FullStak Developer',
+    //     subTitle:
+    //       '2022- Data lagoon (Practical project at a company in collaboration with Appleseeds)',
+    //     description:
+    //       'Working for two months in a team and maintenance and add new features to data lagoon financial web app.',
+    //     technolgies: [
+    //       'javascript',
+    //       'react',
+    //       'HTML',
+    //       'CSS',
+    //       'MaterialUi',
+    //       'flask',
+    //     ],
+    //   },
+    //   {
+    //     id: '2',
+    //     title: 'Jonior Frontend Developer',
+    //     subTitle: '2022-2023 Runnableweb',
+    //     description: 'working in a R&D team as a Frontend Developer',
+    //     technolgies: [
+    //       'typescript',
+    //       'react',
+    //       'react native',
+    //       'HTML',
+    //       'CSS',
+    //       'bootstrap',
+    //       'github',
+    //     ],
+    //   },
+    // ];
 
-    return data;
+    return realData;
   }
 
   getUserProjects() {
