@@ -7,16 +7,16 @@ export type ProjectDocument = HydratedDocument<Project>;
 @Schema()
 export class Project {
   @Prop()
-  title: string;
+  [EUserProjectFormNames.TITLE]: string;
 
   @Prop()
-  description: number;
+  [EUserProjectFormNames.DESCRIPTION]: number;
 
   @Prop()
-  framwork: string;
+  [EUserProjectFormNames.FRAMWORK]: string;
 
   @Prop()
-  technologes: string;
+  [EUserProjectFormNames.TECHNOLGIES]: string;
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);

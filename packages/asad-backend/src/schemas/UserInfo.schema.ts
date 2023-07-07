@@ -7,16 +7,16 @@ export type UserInfoDocument = HydratedDocument<UserInfo>;
 @Schema()
 export class UserInfo {
   @Prop()
-  title: string;
+  [EUserInfoFormNames.TITLE]: string;
 
   @Prop()
-  experience: number;
+  [EUserInfoFormNames.EXP]: number;
 
   @Prop()
-  name: string;
+  [EUserInfoFormNames.NAME]: string;
 
   @Prop()
-  linkedinUrl: string;
+  [EUserInfoFormNames.LINKEDIN_URL]: string;
 }
 
 export const UserInfoSchema = SchemaFactory.createForClass(UserInfo);
