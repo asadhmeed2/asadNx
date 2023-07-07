@@ -7,8 +7,8 @@ import { Model } from 'mongoose';
 
 @Injectable({})
 export class UserInfoService {
-  @InjectModel(Experience.name)
-  private experienceModel: Model<ExperienceDocument>;
+  //   @InjectModel(Experience.name)
+  //   private experienceModel: Model<ExperienceDocument>;
 
   getUserInfo() {
     const demoData: UserInfo = {
