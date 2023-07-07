@@ -10,13 +10,13 @@ export class Experience {
   title: string;
 
   @Prop()
-  subTitle: number;
+  subTitle: string;
 
   @Prop()
   description: string;
 
   @Prop()
-  technolgies: string;
+  technolgies: string[];
 }
 
 export const ExperienceSchema = SchemaFactory.createForClass(Experience);
