@@ -19,3 +19,9 @@ export enum EUserProjectFormNames {
   TECHNOLGIES = 'technologes',
   WEBSITE_URL = 'websiteUrl',
 }
+
+export enum EApiEndpoints {
+  USERINFO = '',
+  EXPERIENCE = '/experience',
+  PROJECTS = 'projects',
+}
