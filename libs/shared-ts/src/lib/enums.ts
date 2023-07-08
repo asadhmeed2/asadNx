@@ -24,4 +24,5 @@ export enum EApiEndpoints {
   USERINFO = '',
   EXPERIENCE = '/experience',
   PROJECTS = 'projects',
+  ADDEXPERIENCE = 'addExperience',
 }

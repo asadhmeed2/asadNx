@@ -1,4 +1,4 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Post } from '@nestjs/common';
 import { UserInfoService } from './userInfo.service';
 import { EApiEndpoints } from '@asadnx/shared-ts';
 
@@ -19,5 +19,10 @@ export class UserInfoController {
   @Get(`/${EApiEndpoints.USERINFO}`)
   getUserInfo() {
     return this._userInfoSvc.getUserInfo();
+  }
+
+  @Post(`/${EApiEndpoints.ADDEXPERIENCE}`)
+  addUserExperience() {
+    return this._userInfoSvc.addUserExperience();
   }
 }

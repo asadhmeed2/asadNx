@@ -1,3 +1,4 @@
+import { EApiEndpoints } from '../../lib/enums';
 import { UserExperience, UserInfo, UserProject } from '../../lib/types';
 
 import axios from 'axios';
@@ -17,7 +18,7 @@ class UserService {
   async getUserExp(baseUrl: string) {
     try {
       const res = await axios.get<UserExperience[]>(
-        `${baseUrl}/userInfo/experience`
+        `${baseUrl}/userInfo/${EApiEndpoints.EXPERIENCE}`
       );
       return res.data;
     } catch (err) {
@@ -29,7 +30,7 @@ class UserService {
   async getUserProjects(baseUrl: string) {
     try {
       const res = await axios.get<UserProject[]>(
-        `${baseUrl}/userInfo/projects`
+        `${baseUrl}/userInfo/${EApiEndpoints.PROJECTS}`
       );
       return res.data;
     } catch (err) {
@@ -49,7 +50,7 @@ class UserService {
   async addUserExperience(baseUrl: string, userExp: UserExperience) {
     try {
       const res = await axios.post<UserExperience>(
-        `${baseUrl}/userInfo/addExperience`
+        `${baseUrl}/userInfo/${EApiEndpoints.ADDEXPERIENCE}`
       );
 
       return res.data;
