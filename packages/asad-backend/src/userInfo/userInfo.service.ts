@@ -96,4 +96,14 @@ export class UserInfoService {
 
     return data;
   }
+
+  addUserExperience(experience: UserExperience) {
+    try {
+      if (experience.id) {
+        const exp = this.experienceModel.find({ id: experience.id });
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  }
 }

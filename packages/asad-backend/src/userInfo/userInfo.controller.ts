@@ -1,6 +1,6 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserInfoService } from './userInfo.service';
-import { EApiEndpoints } from '@asadnx/shared-ts';
+import { EApiEndpoints, UserExperience } from '@asadnx/shared-ts';
 
 @Controller('/userInfo')
 export class UserInfoController {
@@ -22,7 +22,7 @@ export class UserInfoController {
   }
 
   @Post(`/${EApiEndpoints.ADDEXPERIENCE}`)
-  addUserExperience() {
-    return this._userInfoSvc.addUserExperience();
+  addUserExperience(@Body() experience: UserExperience) {
+    return this._userInfoSvc.addUserExperience(experience);
   }
 }
