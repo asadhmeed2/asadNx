@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nx serve new-react-app"
+    "dev": "nx serve new-react-app",
+    "dev:be": "nx serve asad-backend"
   },
   "private": true,
   "dependencies": {
