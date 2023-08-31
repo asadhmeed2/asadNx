@@ -1,3 +1,3 @@
 export default {
-  mongoURL: 'mongodb://localhost:27017/nextjs',
+  mongoURL: 'mongodb://127.0.0.1:27017/nextjs',
 };
