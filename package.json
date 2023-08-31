@@ -2,7 +2,9 @@
   "name": "@asadnx/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "dev": "nx serve new-react-app"
+  },
   "private": true,
   "dependencies": {
     "@nestjs/common": "^9.1.1",
