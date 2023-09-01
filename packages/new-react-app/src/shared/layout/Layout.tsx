@@ -1,17 +1,14 @@
+import React from 'react';
+import { Header } from './header';
 
-import React from 'react'
-import { Header } from './header'
+type Props = React.PropsWithChildren;
 
-type Props = React.PropsWithChildren
-
-export const Layout = ({children}:Props) => {
+export const Layout = ({ children }: Props) => {
   return (
     <div>
-        <Header/>
+      <Header />
 
-        <main className=''>
-            {children}
-        </main>
+      <main className="">{children}</main>
     </div>
-  )
-}
+  );
+};

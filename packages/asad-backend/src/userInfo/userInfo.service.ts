@@ -21,8 +21,8 @@ export class UserInfoService {
     return demoData;
   }
 
-  getUserExperience() {
-    const realData = this.experienceModel.find();
+  async getUserExperience() {
+    const realData = await this.experienceModel.find();
 
     console.log(
       '🚀 ~ file: userInfo.service.ts:31 ~ UserInfoService ~ getUserExperience ~ realData:',
@@ -99,9 +99,7 @@ export class UserInfoService {
 
   addUserExperience(experience: UserExperience) {
     try {
-      if (experience.id) {
-        const exp = this.experienceModel.find({ id: experience.id });
-      }
+      const exp = this.experienceModel.create({ ...experience });
     } catch (err) {
       console.log(err);
     }

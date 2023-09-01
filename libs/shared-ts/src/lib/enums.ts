@@ -22,7 +22,7 @@ export enum EUserProjectFormNames {
 
 export enum EApiEndpoints {
   USERINFO = '',
-  EXPERIENCE = '/experience',
+  EXPERIENCE = 'experience',
   PROJECTS = 'projects',
   ADDEXPERIENCE = 'addExperience',
 }
