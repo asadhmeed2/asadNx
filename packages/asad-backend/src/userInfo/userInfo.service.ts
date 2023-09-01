@@ -1,6 +1,11 @@
 import { Injectable } from '@nestjs/common';
 
-import { UserExperience, UserInfo, UserProject } from '@asadnx/shared-ts';
+import {
+  CreateUserExperience,
+  UserExperience,
+  UserInfo,
+  UserProject,
+} from '@asadnx/shared-ts';
 import { Experience, ExperienceDocument } from '../schemas/Experience.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -97,11 +102,14 @@ export class UserInfoService {
     return data;
   }
 
-  addUserExperience(experience: UserExperience) {
+  async addUserExperience(experience: CreateUserExperience) {
     try {
-      const exp = this.experienceModel.create({ ...experience });
+      const exp = await this.experienceModel.create({ ...experience });
+
+      return exp;
     } catch (err) {
       console.log(err);
+      return null;
     }
   }
 }
