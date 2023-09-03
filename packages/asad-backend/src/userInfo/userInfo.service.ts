@@ -9,11 +9,14 @@ import {
 import { Experience, ExperienceDocument } from '../schemas/Experience.schema';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
+import { ProjectDocument } from '../schemas/project.schema';
 
 @Injectable({})
 export class UserInfoService {
   @InjectModel(Experience.name)
-  private experienceModel: Model<ExperienceDocument>;
+  private _experienceModel: Model<ExperienceDocument>;
+
+  constructor(private _projectsModel: Model<ProjectDocument>) {}
 
   getUserInfo() {
     const demoData: UserInfo = {
@@ -27,7 +30,7 @@ export class UserInfoService {
   }
 
   async getUserExperience() {
-    const realData = await this.experienceModel.find();
+    const realData = await this._experienceModel.find();
 
     console.log(
       '🚀 ~ file: userInfo.service.ts:31 ~ UserInfoService ~ getUserExperience ~ realData:',
@@ -71,40 +74,42 @@ export class UserInfoService {
     return realData;
   }
 
-  getUserProjects() {
-    const data: UserProject[] = [
-      {
-        id: '1',
-        title: 'Aba Hatuv  אבא חטוב',
-        description: '',
-        framwork: 'react native',
-        moreTecnologes: '',
-        websiteUrl: 'https://www.leptin4life.com/',
-      },
-      {
-        id: '2',
-        title: 'yoyo delivery website',
-        description: '',
-        framwork: 'nextjs',
-        moreTecnologes: '',
-        websiteUrl: 'https://www.yoyo.delivery/',
-      },
-      {
-        id: '3',
-        title: 'yoyo delivery app',
-        description: '',
-        framwork: 'expo react native ',
-        moreTecnologes: '',
-        websiteUrl: 'https://www.yoyo.delivery/',
-      },
-    ];
+  async getUserProjects() {
+    const res = await this._projectsModel.find();
+    return res;
+    // const data: UserProject[] = [
+    //   {
+    //     id: '1',
+    //     title: 'Aba Hatuv  אבא חטוב',
+    //     description: '',
+    //     framwork: 'react native',
+    //     moreTecnologes: '',
+    //     websiteUrl: 'https://www.leptin4life.com/',
+    //   },
+    //   {
+    //     id: '2',
+    //     title: 'yoyo delivery website',
+    //     description: '',
+    //     framwork: 'nextjs',
+    //     moreTecnologes: '',
+    //     websiteUrl: 'https://www.yoyo.delivery/',
+    //   },
+    //   {
+    //     id: '3',
+    //     title: 'yoyo delivery app',
+    //     description: '',
+    //     framwork: 'expo react native ',
+    //     moreTecnologes: '',
+    //     websiteUrl: 'https://www.yoyo.delivery/',
+    //   },
+    // ];
 
-    return data;
+    // return data;
   }
 
   async addUserExperience(experience: CreateUserExperience) {
     try {
-      const exp = await this.experienceModel.create({ ...experience });
+      const exp = await this._experienceModel.create({ ...experience });
 
       return exp;
     } catch (err) {
