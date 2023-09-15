@@ -31,7 +31,7 @@ export const Home = () => {
             <Tab
               eventKey="info"
               title="Info"
-              className="position-relative  z-1 text-white w-100 h-100"
+              className="position-relative  z-1 text-white w-100 h-100 "
             >
               <InfoCard />
             </Tab>
