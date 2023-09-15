@@ -18,23 +18,27 @@ export const Home = () => {
           src={reactBg}
           className={cn('z-0 position-absolute', styles.bgImage)}
         />
-        <div className="pt-5">
+        <div
+          className={cn('pt-5 d-flex align-items-center w-100', styles.bgImage)}
+        >
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className={cn('mb-3 mt-5 text-color  position-relative  z-1')}
+            className={cn(
+              'mb-3 mt-5 text-color d-flex flex-column  position-relative  z-1'
+            )}
           >
             <Tab
               eventKey="info"
               title="Info"
-              className="position-relative  z-1 text-white"
+              className="position-relative  z-1 text-white w-100 h-100"
             >
               <InfoCard />
             </Tab>
             <Tab
               eventKey="exp"
               title="Experience"
-              className=" position-relative z-1"
+              className=" position-relative z-1 w-100 h-100 "
             >
               <h2 className="text-center text-color">Experience</h2>
               <ExpCardList />
