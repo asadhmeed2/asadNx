@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from 'react-bootstrap';
+import { Image, Tab, Tabs } from 'react-bootstrap';
 
 import cn from 'classnames';
 
@@ -18,25 +18,44 @@ export const Home = () => {
           src={reactBg}
           className={cn('z-0 position-absolute', styles.bgImage)}
         />
+        <div className="pt-5">
+          <Tabs
+            defaultActiveKey="info"
+            id="uncontrolled-tab-example"
+            className={cn('mb-3 mt-5  position-absolute  z-1')}
+          >
+            <Tab
+              eventKey="info"
+              title="Info"
+              className="position-relative  z-1"
+            >
+              <InfoCard />
+            </Tab>
+            <Tab
+              eventKey="exp"
+              title="Experience"
+              className=" position-relative z-1"
+            >
+              <h2 className="text-center ">Experience</h2>
+              <ExpCardList />
+            </Tab>
+            <Tab
+              eventKey="projects"
+              title="Projects"
+              className="position-relative  z-1"
+            >
+              <h2 className="text-center">projects that i take part of </h2>
+              <ProjectsCardList />
+            </Tab>
 
-        <div className={cn('position-absolute mt-5 pt-4 z-1', styles.content)}>
-          <InfoCard />
-
-          <div className="text-white mt-2">
-            <h2 className="text-center ">Experience</h2>
-          </div>
-
-          <div className="mt-2 px-4 ">
-            <ExpCardList />
-          </div>
-
-          <div className="text-white mt-2">
-            <h2 className="text-center">projects that i take part of </h2>
-          </div>
-
-          <div className="mt-2 px-4 ">
-            <ProjectsCardList />
-          </div>
+            <Tab
+              eventKey="play"
+              title="Play Ground"
+              className="position-relative  z-1"
+            >
+              <h2 className="text-center">play ground </h2>
+            </Tab>
+          </Tabs>
         </div>
       </div>
     </Layout>
