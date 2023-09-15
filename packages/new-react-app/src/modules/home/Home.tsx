@@ -22,12 +22,12 @@ export const Home = () => {
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
-            className={cn('mb-3 mt-5  position-absolute  z-1')}
+            className={cn('mb-3 mt-5 text-color  position-relative  z-1')}
           >
             <Tab
               eventKey="info"
               title="Info"
-              className="position-relative  z-1"
+              className="position-relative  z-1 text-white"
             >
               <InfoCard />
             </Tab>
@@ -36,7 +36,7 @@ export const Home = () => {
               title="Experience"
               className=" position-relative z-1"
             >
-              <h2 className="text-center ">Experience</h2>
+              <h2 className="text-center text-color">Experience</h2>
               <ExpCardList />
             </Tab>
             <Tab
@@ -44,7 +44,9 @@ export const Home = () => {
               title="Projects"
               className="position-relative  z-1"
             >
-              <h2 className="text-center">projects that i take part of </h2>
+              <h2 className="text-center text-color">
+                projects that i take part of{' '}
+              </h2>
               <ProjectsCardList />
             </Tab>
 
@@ -53,7 +55,7 @@ export const Home = () => {
               title="Play Ground"
               className="position-relative  z-1"
             >
-              <h2 className="text-center">play ground </h2>
+              <h2 className="text-center text-color">play ground </h2>
             </Tab>
           </Tabs>
         </div>
