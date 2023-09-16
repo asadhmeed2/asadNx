@@ -18,11 +18,7 @@ export const Home = () => {
           src={reactBg}
           className={cn('z-0 position-absolute', styles.bgImage)}
         />
-        <div
-          className={cn(
-            'pt-5 d-flex align-items-center justify-content-center w-100 flex-1'
-          )}
-        >
+        <div className={cn('pt-5 d-flex align-items-center w-100 flex-1')}>
           <Tabs
             defaultActiveKey="info"
             id="uncontrolled-tab-example"
