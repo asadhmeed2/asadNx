@@ -33,24 +33,8 @@ export const Home = () => {
             >
               <div className={styles.tab}>
                 <InfoCard />
-              </div>
-            </Tab>
-            <Tab
-              eventKey="exp"
-              title="Experience"
-              className={cn(' position-relative z-1 h-100 ', styles.content)}
-            >
-              <div className={styles.tab}>
                 <h2 className="text-center text-color">Experience</h2>
                 <ExpCardList />
-              </div>
-            </Tab>
-            <Tab
-              eventKey="projects"
-              title="Projects"
-              className="position-relative  z-1"
-            >
-              <div className={styles.tab}>
                 <h2 className="text-center text-color">
                   projects that i take part of{' '}
                 </h2>
