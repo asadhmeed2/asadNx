@@ -49,6 +49,9 @@ export const Home = () => {
             >
               <div className={styles.tab}>
                 <h2 className="text-center text-color">play ground </h2>
+                {/* list of objects */}
+                {/* a board to place the object on it  */}
+                {/* use react-dnd */}
               </div>
             </Tab>
           </Tabs>
