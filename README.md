@@ -15,3 +15,30 @@ Run `npx nx connect-to-nx-cloud` to enable [remote caching](https://nx.app) and 
 ## Further help
 
 Visit the [Nx Documentation](https://nx.dev) to learn more.
+
+
+### `Thought process`
+split the project into 3 apps :
+
+  1. admin
+  2. new-react-app
+  3. asad-backend
+  4. library for shared code and types
+
+    ####in the admin website : 
+        we have three forms
+          1. experience
+          2. projects 
+          3. personal info 
+          
+    ####in the new-react-app: 
+        we have three components
+          1. experience
+          2. projects 
+          3. personal info 
+          
+    
+       
+          
+          
+
