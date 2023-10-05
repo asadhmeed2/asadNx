@@ -24,14 +24,14 @@ split the project into 3 apps :
   3. asad-backend
   4. library for shared code and types.
 
-### `the admin website`  
-      we have three forms
-        1. experience.
-        2. projects.
-        3. personal info. 
+#### `the admin website`  
+we have three forms
+    1. experience.
+    2. projects.
+    3. personal info. 
           
-### `the new-react-app` 
-    we have three components
+#### `the new-react-app` 
+we have three components
         1. experience.
         2. projects. 
         3. personal info. 
