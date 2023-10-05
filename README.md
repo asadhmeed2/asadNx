@@ -26,15 +26,15 @@ split the project into 3 apps :
 
 #### `the admin website`  
 ` We have three forms:`
-    1. experience.
-    2. projects.
-    3. personal info. 
+  1. experience.
+  2. projects.
+  3. personal info. 
           
 #### `the new-react-app` 
 ` We have three components:`
-        1. experience.
-        2. projects. 
-        3. personal info. 
+  1. experience.
+  2. projects. 
+  3. personal info. 
           
     
        
