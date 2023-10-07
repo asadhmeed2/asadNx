@@ -31,13 +31,13 @@ split the project into 3 apps :
   * projects.
   * personal info.
     
-2. add futers :
+2. add features :
   
-  * for the future login page with validation
-  * for the future use a higher-order component to check if the user is allowed to enter the page
+  * login page with validation
+  * use a higher-order component to check if the user is allowed to enter the page
     
 3. every form in different component. 
-4. Use Formik and validate every form using yup library 
+4. Use Formik and validate every form using the Yup library 
           
 #### `the new-react-app` 
 ` We have three components:`
