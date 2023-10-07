@@ -25,11 +25,19 @@ split the project into 3 apps :
   4. library for shared code and types.
 
 #### `the admin website`  
-` We have three forms:`
+1.` We have three forms:`
 
-  1. experience.
-  2. projects.
-  3. personal info. 
+  * experience.
+  * projects.
+  * personal info.
+    
+2. add futers :
+  
+  * for the future login page with validation
+  * for the future use a higher-order component to check if the user is allowed to enter the page
+    
+3. every form in different component. 
+4. Use Formik and validate every form using yup library 
           
 #### `the new-react-app` 
 ` We have three components:`
